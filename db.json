@@ -4,7 +4,7 @@
       "id": 1,
       "name": "Classic T-Shirt",
       "price": 25.0,
-      "image": "https://placehold.co/400x400/87CEEB/ffffff?text=T-Shirt",
+      "image": "https://images.pexels.com/photos/1129019/pexels-photo-1129019.jpeg?_gl=1*ofvp3z*_ga*NzIxMDU2NjUyLjE3NTUxMjQ0NDg.*_ga_8JE65Q40S6*czE3NTc4NzgyNDIkbzYkZzEkdDE3NTc4Nzg2ODMkajU5JGwwJGgw",
       "description": "A comfortable and stylish classic t-shirt made from 100% organic cotton. Available in various colors.",
       "category": "Apparel"
     },
@@ -12,7 +12,7 @@
       "id": 2,
       "name": "Minimalist Lamp",
       "price": 60.0,
-      "image": "https://placehold.co/400x400/967bb6/ffffff?text=Lamp",
+      "image": "https://images.pexels.com/photos/1112598/pexels-photo-1112598.jpeg?_gl=1*1ar4y9t*_ga*NzIxMDU2NjUyLjE3NTUxMjQ0NDg.*_ga_8JE65Q40S6*czE3NTc4NzgyNDIkbzYkZzEkdDE3NTc4Nzg5NTMkajM3JGwwJGgw",
       "description": "A sleek, modern lamp with a minimalist design. Perfect for a desk or bedside table. Includes a dimmable LED bulb.",
       "category": "Home Goods"
     },
@@ -20,7 +20,7 @@
       "id": 3,
       "name": "Leather Wallet",
       "price": 45.0,
-      "image": "https://placehold.co/400x400/A9A9A9/ffffff?text=Wallet",
+      "image": "https://images.pexels.com/photos/32614631/pexels-photo-32614631.jpeg?_gl=1*1f7hjgl*_ga*NzIxMDU2NjUyLjE3NTUxMjQ0NDg.*_ga_8JE65Q40S6*czE3NTc4NzgyNDIkbzYkZzEkdDE3NTc4NzkwMDIkajU5JGwwJGgw",
       "description": "A slim, durable wallet made from genuine leather with multiple card slots and a cash compartment.",
       "category": "Accessories"
     },
@@ -28,23 +28,23 @@
       "id": 4,
       "name": "Wireless Headphones",
       "price": 120.0,
-      "image": "https://placehold.co/400x400/F5A623/ffffff?text=Headphones",
+      "image": "https://images.pexels.com/photos/3585797/pexels-photo-3585797.jpeg?_gl=1*uyhfw5*_ga*NzIxMDU2NjUyLjE3NTUxMjQ0NDg.*_ga_8JE65Q40S6*czE3NTc4NzgyNDIkbzYkZzEkdDE3NTc4NzgyNjEkajQxJGwwJGgw",
       "description": "High-fidelity wireless headphones with a long-lasting battery and noise-cancellation technology.",
       "category": "Electronics"
     },
     {
       "id": 5,
-      "name": "Ceramic Mug",
-      "price": 15.0,
-      "image": "https://placehold.co/400x400/A0522D/ffffff?text=Mug",
-      "description": "A handcrafted ceramic mug with a unique speckled finish. Perfect for coffee or tea.",
-      "category": "Home Goods"
+      "name": "Minimalist Speaker",
+      "price": 125.0,
+      "image": "https://images.pexels.com/photos/31748137/pexels-photo-31748137.jpeg?_gl=1*1i1a2gs*_ga*NzIxMDU2NjUyLjE3NTUxMjQ0NDg.*_ga_8JE65Q40S6*czE3NTc4NzgyNDIkbzYkZzEkdDE3NTc4NzkxMDUkajUwJGwwJGgw",
+      "description": "A powerful wireless speaker with a sleek, minimalist design. Enjoy high-quality sound without sacrificing style.",
+      "category": "Electronics"
     },
     {
       "id": 6,
       "name": "Running Shoes",
       "price": 95.0,
-      "image": "https://placehold.co/400x400/008080/ffffff?text=Shoes",
+      "image": "https://images.unsplash.com/photo-1731132198530-e4b2dc51d511?q=80&w=1632&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "description": "Lightweight and breathable running shoes designed for comfort and performance.",
       "category": "Apparel"
     },
@@ -52,7 +52,7 @@
       "id": 7,
       "name": "Laptop Backpack",
       "price": 75.0,
-      "image": "https://placehold.co/400x400/556B2F/ffffff?text=Backpack",
+      "image": "https://images.unsplash.com/photo-1622560481979-f5b0174242a0?q=80&w=688&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "description": "A durable backpack with a padded laptop compartment, ideal for commuting or travel.",
       "category": "Accessories"
     },
@@ -60,7 +60,7 @@
       "id": 8,
       "name": "Smart Watch",
       "price": 200.0,
-      "image": "https://placehold.co/400x400/B22222/ffffff?text=Smart+Watch",
+      "image": "https://images.pexels.com/photos/437037/pexels-photo-437037.jpeg?_gl=1*1fd7tfx*_ga*NzIxMDU2NjUyLjE3NTUxMjQ0NDg.*_ga_8JE65Q40S6*czE3NTc4NzgyNDIkbzYkZzEkdDE3NTc4Nzg0MDUkajM2JGwwJGgw",
       "description": "Stay connected with this feature-rich smart watch. Track your fitness, receive notifications, and more.",
       "category": "Electronics"
     }

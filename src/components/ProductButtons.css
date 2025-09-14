@@ -1,0 +1,63 @@
+.product__buttons {
+  display: flex;
+  gap: 1.2rem;
+
+  animation: fadeIn 0.6s var(--transition-bezier);
+}
+
+.product__buttons--quantity {
+  display: flex;
+  align-items: center;
+  border: 2px solid var(--primary-color);
+  gap: 2rem;
+  padding: 0.4rem 1.2rem;
+}
+
+.product__quantity {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: var(--color-light);
+}
+
+.product__button--minus,
+.product__button--plus {
+  width: 1.8rem;
+  height: 1.8rem;
+  color: var(--primary-color);
+  background-color: transparent;
+  border: none;
+}
+
+.product__button--add {
+  font-size: 1.6rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  padding: 0.8rem 4.2rem;
+  background-color: var(--primary-color);
+  color: var(--color-dark);
+  border: none;
+  text-transform: uppercase;
+  transition: all 0.4s var(--transition-bezier);
+}
+
+.product__button--add:hover {
+  cursor: pointer;
+  background-color: #806a1e;
+  color: var(--color-light);
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+
+  50% {
+    opacity: 0.5;
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}

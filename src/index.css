@@ -2,11 +2,14 @@
 
 :root {
   --primary-color: #ffd43b;
+  --primary-color--opacity: rgba(255, 212, 59, 0.6);
 
   --color-light: #f8f9fa;
   --color-dark: #222;
 
   --border-radius: 2rem;
+
+  --transition-bezier: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 * {

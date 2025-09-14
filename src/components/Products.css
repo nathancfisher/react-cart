@@ -1,0 +1,15 @@
+.shop__products {
+  display: grid;
+  grid-template-rows: 30fr 36fr 30fr;
+  grid-template-columns: repeat(6, 1fr);
+  flex-grow: 1;
+  gap: 2.4rem;
+}
+
+.span-3-col {
+  grid-column: span 3;
+}
+
+.span-2-col {
+  grid-column: span 2;
+}

@@ -3,6 +3,7 @@ import "./Shop.css";
 import Nav from "../components/Nav";
 import Search from "../components/Search";
 import CartButton from "../components/CartButton";
+import Products from "../components/Products";
 
 function Shop() {
   return (
@@ -12,9 +13,8 @@ function Shop() {
         <CartButton />
       </Nav>
 
-      <section className="shop__products">
-        <p>Products</p>
-      </section>
+      <Products />
+
       <Outlet />
     </main>
   );
