@@ -1,0 +1,68 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Classic T-Shirt",
+      "price": 25.0,
+      "image": "https://placehold.co/400x400/87CEEB/ffffff?text=T-Shirt",
+      "description": "A comfortable and stylish classic t-shirt made from 100% organic cotton. Available in various colors.",
+      "category": "Apparel"
+    },
+    {
+      "id": 2,
+      "name": "Minimalist Lamp",
+      "price": 60.0,
+      "image": "https://placehold.co/400x400/967bb6/ffffff?text=Lamp",
+      "description": "A sleek, modern lamp with a minimalist design. Perfect for a desk or bedside table. Includes a dimmable LED bulb.",
+      "category": "Home Goods"
+    },
+    {
+      "id": 3,
+      "name": "Leather Wallet",
+      "price": 45.0,
+      "image": "https://placehold.co/400x400/A9A9A9/ffffff?text=Wallet",
+      "description": "A slim, durable wallet made from genuine leather with multiple card slots and a cash compartment.",
+      "category": "Accessories"
+    },
+    {
+      "id": 4,
+      "name": "Wireless Headphones",
+      "price": 120.0,
+      "image": "https://placehold.co/400x400/F5A623/ffffff?text=Headphones",
+      "description": "High-fidelity wireless headphones with a long-lasting battery and noise-cancellation technology.",
+      "category": "Electronics"
+    },
+    {
+      "id": 5,
+      "name": "Ceramic Mug",
+      "price": 15.0,
+      "image": "https://placehold.co/400x400/A0522D/ffffff?text=Mug",
+      "description": "A handcrafted ceramic mug with a unique speckled finish. Perfect for coffee or tea.",
+      "category": "Home Goods"
+    },
+    {
+      "id": 6,
+      "name": "Running Shoes",
+      "price": 95.0,
+      "image": "https://placehold.co/400x400/008080/ffffff?text=Shoes",
+      "description": "Lightweight and breathable running shoes designed for comfort and performance.",
+      "category": "Apparel"
+    },
+    {
+      "id": 7,
+      "name": "Laptop Backpack",
+      "price": 75.0,
+      "image": "https://placehold.co/400x400/556B2F/ffffff?text=Backpack",
+      "description": "A durable backpack with a padded laptop compartment, ideal for commuting or travel.",
+      "category": "Accessories"
+    },
+    {
+      "id": 8,
+      "name": "Smart Watch",
+      "price": 200.0,
+      "image": "https://placehold.co/400x400/B22222/ffffff?text=Smart+Watch",
+      "description": "Stay connected with this feature-rich smart watch. Track your fitness, receive notifications, and more.",
+      "category": "Electronics"
+    }
+  ]
+}

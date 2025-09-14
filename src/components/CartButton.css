@@ -1,0 +1,35 @@
+.navbar__cart--wrapper {
+  position: absolute;
+  justify-self: end;
+}
+
+.navbar__cart {
+  border: none;
+  background-color: transparent;
+  justify-self: end;
+}
+
+.navbar__cart > svg {
+  width: 3.2rem;
+  height: 3.2rem;
+  color: var(--color-light);
+}
+
+.navbar__cart--count {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: -0.6rem;
+  right: -1rem;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background-color: var(--primary-color);
+  color: var(--color-dark);
+}
+
+.navbar__cart--count > p {
+  font-size: 1.2rem;
+  font-weight: 700;
+}

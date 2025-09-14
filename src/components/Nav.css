@@ -1,0 +1,15 @@
+.shop__navbar {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.4rem;
+  align-items: center;
+}
+
+.navbar__title {
+  justify-self: start;
+  font-size: 5.2rem;
+  font-weight: 800;
+  letter-spacing: -1px;
+  color: var(--primary-color);
+  text-transform: uppercase;
+}
