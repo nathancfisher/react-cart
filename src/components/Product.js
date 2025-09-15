@@ -3,7 +3,7 @@ import "./Product.css";
 import ProductButtons from "./ProductButtons";
 import DetailsButton from "./DetailsButton";
 
-function Product({ product, className, onSelectProduct, onAddToCart }) {
+function Product({ product, className }) {
   const { name, price, image } = product;
 
   const [hover, setHover] = useState(false);
@@ -23,8 +23,8 @@ function Product({ product, className, onSelectProduct, onAddToCart }) {
 
       {hover && (
         <>
-          <ProductButtons product={product} onAddToCart={onAddToCart} />
-          <DetailsButton onSelectProduct={onSelectProduct} product={product} />
+          <ProductButtons product={product} />
+          <DetailsButton product={product} />
         </>
       )}
     </div>

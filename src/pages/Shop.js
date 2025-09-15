@@ -5,15 +5,15 @@ import Search from "../components/Search";
 import CartButton from "../components/CartButton";
 import Products from "../components/Products";
 
-function Shop({ onAddToCart, cart }) {
+function Shop() {
   return (
     <main className="shop">
       <Nav>
         <Search />
-        <CartButton cart={cart} />
+        <CartButton />
       </Nav>
 
-      <Products onAddToCart={onAddToCart} />
+      <Products />
 
       <Outlet />
     </main>

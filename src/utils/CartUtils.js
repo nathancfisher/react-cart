@@ -1,5 +1,5 @@
 function findItemInCart(cart, id) {
-  return cart.find((item) => item.id === id);
+  return cart.some((item) => item.product.id === id);
 }
 
 function removeItemFromCart(cart, id) {
@@ -8,7 +8,9 @@ function removeItemFromCart(cart, id) {
 
 function updateItemInCart(cart, id, quantity) {
   return cart.map((item) =>
-    item.id === id ? { ...item, quantity: item.quantity + quantity } : item
+    item.product.id === id
+      ? { ...item, quantity: item.quantity + quantity }
+      : item
   );
 }
 

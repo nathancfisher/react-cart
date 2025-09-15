@@ -17,12 +17,13 @@ function CartReducer(state, { type, payload }) {
     case "cart/add":
       // existing item increment
       if (findItemInCart(state.cart, payload.product.id)) {
+        console.log("HELLO");
         return {
           ...state,
           cart: updateItemInCart(
             state.cart,
             payload.product.id,
-            payload.amount
+            payload.quantity
           ),
         };
       }
@@ -31,7 +32,7 @@ function CartReducer(state, { type, payload }) {
         ...state,
         cart: [
           ...state.cart,
-          { product: payload.product, quantity: payload.amount },
+          { product: payload.product, quantity: payload.quantity },
         ],
       };
 

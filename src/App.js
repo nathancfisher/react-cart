@@ -1,4 +1,4 @@
-import { lazy, Suspense, useState } from "react";
+import { lazy, Suspense } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 import SpinnerFullPage from "./pages/SpinnerFullPage";
@@ -16,11 +16,8 @@ function App() {
         <CartProvider>
           <ProductsProvider>
             <Routes>
-              <Route
-                path="/"
-                element={<Shop onAddToCart={handleAddToCart} cart={cart} />}
-              >
-                <Route
+              <Route path="/" element={<Shop />}>
+                {/* <Route
                   path="cart"
                   element={
                     <Cart
@@ -33,7 +30,7 @@ function App() {
                 <Route
                   path="/:id"
                   element={<SelectedProduct onAddToCart={handleAddToCart} />}
-                ></Route>
+                ></Route> */}
               </Route>
             </Routes>
           </ProductsProvider>

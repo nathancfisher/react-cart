@@ -1,7 +1,8 @@
 import { Link } from "react-router-dom";
 import "./CartButton.css";
-function CartButton({ cart }) {
-  const cartCount = cart.reduce((acc, item) => acc + item.quantity, 0);
+import { useCart } from "../hooks/CartProvider";
+function CartButton() {
+  const cartCount = useCart().cart.length;
 
   return (
     <div className="navbar__cart--wrapper">

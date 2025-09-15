@@ -1,9 +1,11 @@
 import { useState } from "react";
 import "./ProductButtons.css";
 import QuantityButtons from "./QuantityButtons";
+import { useCart } from "../hooks/CartProvider";
 
-function ProductButtons({ product, onAddToCart }) {
+function ProductButtons({ product }) {
   const [quantity, setQuantity] = useState(1);
+  const { dispatch } = useCart();
 
   const handleQuantityIncrement = () => {
     setQuantity((prevQuantity) => prevQuantity + 1);
@@ -23,7 +25,12 @@ function ProductButtons({ product, onAddToCart }) {
       />
       <button
         className="product__button--add"
-        onClick={() => onAddToCart(product, quantity)}
+        onClick={() =>
+          dispatch({
+            type: "cart/add",
+            payload: { product: product, quantity: quantity },
+          })
+        }
       >
         Add to cart
       </button>
