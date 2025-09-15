@@ -2,7 +2,7 @@
 
 :root {
   --primary-color: #ffd43b;
-  --primary-color--opacity: rgba(255, 212, 59, 0.6);
+  --primary-color--opacity: rgba(255, 212, 59, 0.8);
 
   --color-light: #f8f9fa;
   --color-dark: #222;
@@ -21,6 +21,7 @@
 
 html {
   font-size: 62.5%;
+  overflow-x: hidden;
 }
 
 body {

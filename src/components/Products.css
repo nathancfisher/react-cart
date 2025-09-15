@@ -6,6 +6,15 @@
   gap: 2.4rem;
 }
 
+.shop__products.selected-column--0,
+.shop__products.selected-column--1,
+.shop__products.selected-column--2 {
+}
+
+.shop__products.selected-column--3,
+.shop__products.selected-column--4 {
+}
+
 .span-3-col {
   grid-column: span 3;
 }

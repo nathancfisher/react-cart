@@ -2,30 +2,7 @@
   display: flex;
   gap: 1.2rem;
 
-  animation: fadeIn 0.6s var(--transition-bezier);
-}
-
-.product__buttons--quantity {
-  display: flex;
-  align-items: center;
-  border: 2px solid var(--primary-color);
-  gap: 2rem;
-  padding: 0.4rem 1.2rem;
-}
-
-.product__quantity {
-  font-size: 1.6rem;
-  font-weight: 600;
-  color: var(--color-light);
-}
-
-.product__button--minus,
-.product__button--plus {
-  width: 1.8rem;
-  height: 1.8rem;
-  color: var(--primary-color);
-  background-color: transparent;
-  border: none;
+  animation: fadeInLeft 0.6s var(--transition-bezier);
 }
 
 .product__button--add {
@@ -46,7 +23,7 @@
   color: var(--color-light);
 }
 
-@keyframes fadeIn {
+@keyframes fadeInLeft {
   0% {
     opacity: 0;
     transform: translateX(-100%);
