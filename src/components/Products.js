@@ -1,58 +1,50 @@
 import { useEffect, useState } from "react";
 import "./Products.css";
 import Product from "./Product";
-import SelectedProduct from "./SelectedProduct";
+import { useSearchParams } from "react-router-dom";
+import SectionLoader from "./SectionLoader";
 
-function Products() {
+function Products({ onAddToCart }) {
   const [products, setProducts] = useState([]);
-  const [selectedProductId, setSelectedProductId] = useState("");
-
-  const handleSelectProduct = (id) => {
-    if (selectedProductId === id) {
-      setSelectedProductId("");
-      return;
-    }
-
-    setSelectedProductId(id);
-  };
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     async function fetchProducts() {
       const response = await fetch("http://localhost:8000/products");
       const data = await response.json();
       setProducts(data);
+      setLoading(false);
     }
     fetchProducts();
   }, []);
 
-  return (
-    <section
-      className={`shop__products ${
-        selectedProductId
-          ? `selected-column--${(selectedProductId - 1) % 5}`
-          : ""
-      } ${
-        selectedProductId
-          ? `selected-row--${Math.floor(selectedProductId / 2)}`
-          : ""
-      }`}
-    >
-      {products.map((product, i) => {
-        // show selected product
-        if (product.id === selectedProductId) {
-          return <SelectedProduct key={product.id} product={product} />;
-        }
+  const [params] = useSearchParams();
+  const search = params.get("search");
 
-        // show other products
-        return (
-          <Product
-            key={product.id}
-            product={product}
-            className={i % 5 === 3 || i % 5 === 4 ? "span-3-col" : "span-2-col"}
-            onSelectProduct={handleSelectProduct}
-          />
-        );
-      })}
+  const filteredProducts = products.filter((product) => {
+    return search?.length === 0
+      ? products
+      : product.name.toLowerCase().includes(search?.toLowerCase());
+  });
+
+  return (
+    <section className={`shop__products ${loading ? "" : "fadeIn"}`}>
+      {loading ? (
+        <SectionLoader />
+      ) : (
+        filteredProducts.map((product, i) => {
+          return (
+            <Product
+              onAddToCart={onAddToCart}
+              key={product.id}
+              product={product}
+              className={
+                i % 5 === 3 || i % 5 === 4 ? "span-3-col" : "span-2-col"
+              }
+            />
+          );
+        })
+      )}
     </section>
   );
 }

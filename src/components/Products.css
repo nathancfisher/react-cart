@@ -1,18 +1,10 @@
 .shop__products {
+  position: relative;
   display: grid;
   grid-template-rows: 30fr 36fr 30fr;
   grid-template-columns: repeat(6, 1fr);
   flex-grow: 1;
   gap: 2.4rem;
-}
-
-.shop__products.selected-column--0,
-.shop__products.selected-column--1,
-.shop__products.selected-column--2 {
-}
-
-.shop__products.selected-column--3,
-.shop__products.selected-column--4 {
 }
 
 .span-3-col {
@@ -21,4 +13,8 @@
 
 .span-2-col {
   grid-column: span 2;
+}
+
+.fadeIn {
+  animation: fadeIn 1.2s var(--transition-bezier);
 }

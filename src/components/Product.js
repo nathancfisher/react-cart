@@ -1,11 +1,10 @@
 import { useState } from "react";
 import "./Product.css";
 import ProductButtons from "./ProductButtons";
-import { Link } from "react-router-dom";
 import DetailsButton from "./DetailsButton";
 
-function Product({ product, className, onSelectProduct }) {
-  const { name, price, image, id } = product;
+function Product({ product, className, onSelectProduct, onAddToCart }) {
+  const { name, price, image } = product;
 
   const [hover, setHover] = useState(false);
 
@@ -14,7 +13,6 @@ function Product({ product, className, onSelectProduct }) {
       className={`shop__product ${className}`}
       onMouseEnter={() => setHover(true)}
       onMouseLeave={() => setHover(false)}
-      onClick={() => onSelectProduct(id)}
     >
       <img src={image} alt={name} className="product__image" />
 
@@ -25,8 +23,8 @@ function Product({ product, className, onSelectProduct }) {
 
       {hover && (
         <>
-          <ProductButtons />
-          <DetailsButton id={id} />
+          <ProductButtons product={product} onAddToCart={onAddToCart} />
+          <DetailsButton onSelectProduct={onSelectProduct} product={product} />
         </>
       )}
     </div>

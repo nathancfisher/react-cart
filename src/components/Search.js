@@ -1,5 +1,16 @@
+import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "./Search.css";
+
 function Search() {
+  const [search, setSearch] = useState("");
+
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    navigate(`?search=${search}`);
+  }, [search, navigate]);
+
   return (
     <div className="navbar__search--wrapper">
       <svg
@@ -20,6 +31,8 @@ function Search() {
         type="search"
         className="navbar__search"
         placeholder="Search for products..."
+        value={search}
+        onChange={(e) => setSearch(e.target.value)}
       ></input>
     </div>
   );

@@ -22,19 +22,3 @@
   background-color: #806a1e;
   color: var(--color-light);
 }
-
-@keyframes fadeInLeft {
-  0% {
-    opacity: 0;
-    transform: translateX(-100%);
-  }
-
-  50% {
-    opacity: 0.5;
-  }
-
-  100% {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}

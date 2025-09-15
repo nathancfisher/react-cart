@@ -1,0 +1,6 @@
+.close {
+  aspect-ratio: 1 / 1;
+  color: var(--color-light);
+  cursor: pointer;
+  width: 3rem;
+}

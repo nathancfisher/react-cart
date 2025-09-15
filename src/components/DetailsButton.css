@@ -13,19 +13,3 @@
   cursor: pointer;
   animation: fadeInRight 0.6s var(--transition-bezier);
 }
-
-@keyframes fadeInRight {
-  0% {
-    opacity: 0;
-    transform: translateX(100%);
-  }
-
-  50% {
-    opacity: 0.5;
-  }
-
-  100% {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
