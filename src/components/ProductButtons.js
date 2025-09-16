@@ -3,7 +3,7 @@ import "./ProductButtons.css";
 import QuantityButtons from "./QuantityButtons";
 import { useCart } from "../hooks/CartProvider";
 
-function ProductButtons({ product }) {
+function ProductButtons({ product, setAdded }) {
   const [quantity, setQuantity] = useState(1);
   const { dispatch } = useCart();
 
@@ -25,12 +25,13 @@ function ProductButtons({ product }) {
       />
       <button
         className="product__button--add"
-        onClick={() =>
+        onClick={() => {
+          setAdded(true);
           dispatch({
             type: "cart/add",
             payload: { product: product, quantity: quantity },
-          })
-        }
+          });
+        }}
       >
         Add to cart
       </button>

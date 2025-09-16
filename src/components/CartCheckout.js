@@ -1,11 +1,27 @@
+import { useEffect, useState } from "react";
+import { useCart } from "../hooks/CartProvider";
+import { wait } from "../utils/ProductUtils";
+import { MoonLoader } from "react-spinners";
 import "./CartCheckout.css";
 
-function CartCheckout({ cart }) {
+function CartCheckout() {
+  const [loading, setLoading] = useState(false);
+  const { cart, dispatch } = useCart();
+
   const total = cart.reduce(
     (acc, product) => acc + product.price * product.quantity,
     0
   );
+
   const tax = total * 0.25;
+
+  const handleCheckout = async () => {
+    if (cart.length === 0) return;
+
+    setLoading(true);
+    await wait(2).then(() => dispatch({ type: "cart/checkout" }));
+    setLoading(false);
+  };
 
   return (
     <footer className="cart__checkout">
@@ -33,7 +49,13 @@ function CartCheckout({ cart }) {
         <p className="cart__checkout--price">${total.toFixed(2)}</p>
       </div>
 
-      <button className="cart__checkout--button">Checkout</button>
+      <button className="cart__checkout--button" onClick={handleCheckout}>
+        {loading ? (
+          <MoonLoader color="var(--color-dark)" size={24} />
+        ) : (
+          "Checkout"
+        )}
+      </button>
     </footer>
   );
 }

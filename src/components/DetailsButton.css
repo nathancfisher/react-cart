@@ -1,8 +1,8 @@
 .product__button--details {
   position: absolute;
   text-decoration: none;
-  top: 5%;
-  right: 2.5%;
+  right: 3rem;
+  top: 1.8rem;
   background-color: rgba(0, 0, 0, 0.5);
   border: none;
   color: var(--color-light);

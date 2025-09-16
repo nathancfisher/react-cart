@@ -46,4 +46,6 @@
   font-weight: 700;
   text-transform: uppercase;
   margin-top: auto;
+
+  animation: fadeIn 0.4s var(--transition-bezier);
 }

@@ -48,6 +48,8 @@ function CartReducer(state, { type, payload }) {
             };
       }
       return state;
+    case "cart/checkout":
+      return { ...state, cart: [] };
     default:
       return state;
   }

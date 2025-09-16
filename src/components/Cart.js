@@ -20,7 +20,7 @@ function Cart() {
         )}
       </div>
 
-      <CartCheckout cart={cart} />
+      <CartCheckout />
     </section>
   );
 }

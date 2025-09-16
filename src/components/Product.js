@@ -1,12 +1,25 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./Product.css";
 import ProductButtons from "./ProductButtons";
 import DetailsButton from "./DetailsButton";
+import ProductInCart from "./ProductInCart";
+import { wait } from "../utils/ProductUtils";
+import AddOveraly from "./AddOveraly";
 
 function Product({ product, className }) {
   const { name, price, image } = product;
 
   const [hover, setHover] = useState(false);
+  const [added, setAdded] = useState(false);
+
+  useEffect(() => {
+    if (!added) return;
+    async function addAnimation() {
+      wait(2).then(() => setAdded(false));
+    }
+
+    addAnimation();
+  }, [added, setAdded]);
 
   return (
     <div
@@ -23,10 +36,13 @@ function Product({ product, className }) {
 
       {hover && (
         <>
-          <ProductButtons product={product} />
+          <ProductButtons product={product} setAdded={setAdded} />
           <DetailsButton product={product} />
+          <ProductInCart product={product} />
         </>
       )}
+
+      {added && <AddOveraly />}
     </div>
   );
 }

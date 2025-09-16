@@ -1,13 +1,26 @@
 import { useEffect, useState } from "react";
 import CloseButton from "../components/CloseButton";
 import "./SelectedProduct.css";
+import { wait } from "../utils/ProductUtils";
 import { useParams } from "react-router-dom";
 import SectionLoader from "./SectionLoader";
 import ProductButtons from "./ProductButtons";
+import AddOveraly from "./AddOveraly";
 
 function SelectedProduct() {
   const [selectedProduct, setSelectedProduct] = useState({});
   const [loading, setLoading] = useState(true);
+
+  const [added, setAdded] = useState(false);
+
+  useEffect(() => {
+    if (!added) return;
+    async function addAnimation() {
+      wait(2).then(() => setAdded(false));
+    }
+
+    addAnimation();
+  }, [added, setAdded]);
 
   const id = useParams().id;
 
@@ -48,7 +61,9 @@ function SelectedProduct() {
               {selectedProduct.description}
             </p>
 
-            <ProductButtons product={selectedProduct} />
+            <ProductButtons product={selectedProduct} setAdded={setAdded} />
+
+            {added && <AddOveraly />}
           </div>
         </>
       )}
