@@ -1,8 +1,9 @@
 import "./Products.css";
 import Product from "./Product";
 import { useProducts } from "../hooks/ProductsProvider";
+import { memo } from "react";
 
-function Products() {
+const Products = memo(function Products() {
   const { filteredProducts } = useProducts();
 
   return (
@@ -18,6 +19,6 @@ function Products() {
       })}
     </section>
   );
-}
+});
 
 export default Products;

@@ -1,19 +1,10 @@
-import { createContext, useContext, useEffect, useState } from "react";
-import { useSearchParams } from "react-router-dom";
+import { createContext, useContext, useEffect, useMemo, useState } from "react";
+import useSearch from "./useSearch";
 
 const ProductsContext = createContext();
 
 function ProductsProvider({ children }) {
   const [products, setProducts] = useState([]);
-
-  const [params] = useSearchParams();
-  const search = params.get("search");
-
-  const filteredProducts = products.filter((product) => {
-    return search?.length === 0
-      ? products
-      : product.name.toLowerCase().includes(search?.toLowerCase());
-  });
 
   useEffect(() => {
     async function fetchProducts() {
@@ -24,8 +15,23 @@ function ProductsProvider({ children }) {
     fetchProducts();
   }, []);
 
+  const search = useSearch();
+
+  const filteredProducts = useMemo(() => {
+    return products.filter((product) => {
+      return search?.length === 0
+        ? true
+        : product.name.toLowerCase().includes(search?.toLowerCase());
+    });
+  }, [products, search]);
+
+  const value = useMemo(
+    () => ({ products, filteredProducts }),
+    [products, filteredProducts]
+  );
+
   return (
-    <ProductsContext.Provider value={{ products, filteredProducts }}>
+    <ProductsContext.Provider value={value}>
       {children}
     </ProductsContext.Provider>
   );

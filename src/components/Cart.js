@@ -2,7 +2,10 @@ import CartItem from "../components/CartItem";
 import "./Cart.css";
 import CartCheckout from "../components/CartCheckout";
 import CloseButton from "../components/CloseButton";
-function Cart({ cart, onAddToCart, onRemoveFromCart }) {
+import { useCart } from "../hooks/CartProvider";
+function Cart() {
+  const { cart } = useCart();
+
   return (
     <section className="cart">
       <header className="cart__header">
@@ -13,14 +16,7 @@ function Cart({ cart, onAddToCart, onRemoveFromCart }) {
         {cart.length === 0 ? (
           <p className="cart__empty">Your cart is empty</p>
         ) : (
-          cart.map((product) => (
-            <CartItem
-              key={product.id}
-              product={product}
-              onAddToCart={onAddToCart}
-              onRemoveFromCart={onRemoveFromCart}
-            />
-          ))
+          cart.map((product) => <CartItem key={product.id} product={product} />)
         )}
       </div>
 

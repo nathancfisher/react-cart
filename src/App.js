@@ -17,20 +17,8 @@ function App() {
           <ProductsProvider>
             <Routes>
               <Route path="/" element={<Shop />}>
-                {/* <Route
-                  path="cart"
-                  element={
-                    <Cart
-                      cart={cart}
-                      onAddToCart={handleAddToCart}
-                      onRemoveFromCart={handleRemoveFromCart}
-                    />
-                  }
-                ></Route>
-                <Route
-                  path="/:id"
-                  element={<SelectedProduct onAddToCart={handleAddToCart} />}
-                ></Route> */}
+                <Route path="cart" element={<Cart />}></Route>
+                <Route path="/:id" element={<SelectedProduct />}></Route>
               </Route>
             </Routes>
           </ProductsProvider>

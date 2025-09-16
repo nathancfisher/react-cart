@@ -1,6 +1,10 @@
+import { useCart } from "../hooks/CartProvider";
 import "./CartItem.css";
 import QuantityButtons from "./QuantityButtons";
-function CartItem({ product, onAddToCart, onRemoveFromCart }) {
+
+function CartItem({ product }) {
+  const { dispatch } = useCart();
+
   return (
     <div className="cart__item">
       <div className="cart__item--image-wrapper">
@@ -25,14 +29,26 @@ function CartItem({ product, onAddToCart, onRemoveFromCart }) {
         <div className="cart__item--actions">
           <QuantityButtons
             quantity={product.quantity}
-            onQuantityIncrement={() => onAddToCart(product)}
-            onQuantityDecrement={() => onRemoveFromCart(product)}
+            onQuantityIncrement={() =>
+              dispatch({ type: "cart/add", payload: { product, quantity: 1 } })
+            }
+            onQuantityDecrement={() =>
+              dispatch({
+                type: "cart/remove",
+                payload: { product, quantity: 1 },
+              })
+            }
           />
 
           <button
             type="button"
             className="cart__item--remove"
-            onClick={() => onRemoveFromCart(product, product.quantity)}
+            onClick={() =>
+              dispatch({
+                type: "cart/remove",
+                payload: { product, quantity: product.quantity },
+              })
+            }
           >
             Remove
           </button>

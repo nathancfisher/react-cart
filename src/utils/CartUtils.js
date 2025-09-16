@@ -1,16 +1,16 @@
 function findItemInCart(cart, id) {
-  return cart.some((item) => item.product.id === id);
+  return cart.some((product) => product.id === id);
 }
 
 function removeItemFromCart(cart, id) {
-  return cart.filter((item) => item.id !== id);
+  return cart.filter((product) => product.id !== id);
 }
 
 function updateItemInCart(cart, id, quantity) {
-  return cart.map((item) =>
-    item.product.id === id
-      ? { ...item, quantity: item.quantity + quantity }
-      : item
+  return cart.map((product) =>
+    product.id === id
+      ? { ...product, quantity: product.quantity + quantity }
+      : product
   );
 }
 

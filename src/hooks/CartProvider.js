@@ -1,4 +1,4 @@
-import { createContext, useContext, useReducer } from "react";
+import { createContext, useContext, useMemo, useReducer } from "react";
 
 import {
   findItemInCart,
@@ -8,16 +8,11 @@ import {
 
 const CartContext = createContext();
 
-const initialState = {
-  cart: [],
-};
-
 function CartReducer(state, { type, payload }) {
   switch (type) {
     case "cart/add":
       // existing item increment
       if (findItemInCart(state.cart, payload.product.id)) {
-        console.log("HELLO");
         return {
           ...state,
           cart: updateItemInCart(
@@ -32,20 +27,24 @@ function CartReducer(state, { type, payload }) {
         ...state,
         cart: [
           ...state.cart,
-          { product: payload.product, quantity: payload.quantity },
+          { ...payload.product, quantity: payload.quantity },
         ],
       };
 
     case "cart/remove":
       if (findItemInCart(state.cart, payload.product.id)) {
-        return payload.product.quantity === 1
+        return payload.product.quantity === payload.quantity
           ? {
               ...state,
               cart: removeItemFromCart(state.cart, payload.product.id),
             }
           : {
               ...state,
-              cart: updateItemInCart(state.cart, payload.product.id, -1),
+              cart: updateItemInCart(
+                state.cart,
+                payload.product.id,
+                -payload.quantity
+              ),
             };
       }
       return state;
@@ -55,6 +54,13 @@ function CartReducer(state, { type, payload }) {
 }
 
 function CartProvider({ children }) {
+  const initialState = useMemo(
+    () => ({
+      cart: [],
+    }),
+    []
+  );
+
   const [{ cart }, dispatch] = useReducer(CartReducer, initialState);
 
   return (
